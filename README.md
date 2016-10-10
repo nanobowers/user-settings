@@ -1,17 +1,22 @@
 
 
+# from fedora24 starting point:
 
-# first, emacs and git
+ sudo dnf install emacs # emacs
+ sudo dnf install tkcvs # tkdiff
 
-sudo apt-get install emacs24
-sudo apt-get install git
+# pull magic git-bash prompt
+ cd ~ && git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
+ 
+# Install RVM
 
-# then install RVM
-
-command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-curl -sSL https://get.rvm.io | bash -s stable
-source ./.rvm/scripts/rvm
-rvm install 2.1.5
+ command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+ curl -sSL https://get.rvm.io | bash -s stable
+ source ./.rvm/scripts/rvm
+ rvm install 2.1.5 # or rvm reinstall 2.1.5
 
 # now get my user settings
-git clone http://github.com/nanobowers/user-settings
+
+ git clone http://github.com/nanobowers/user-settings
+ cd user-settings && ./install_dotfiles.sh
+
