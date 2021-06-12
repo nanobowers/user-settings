@@ -37,7 +37,6 @@ shopt -s globstar
 # Correct spelling in cd command
 shopt -s cdspell
 
-
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -55,6 +54,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+#Editor
+export EDITOR=emacs
 
 #Standard non-git prompt:
 PS1="\[\033[0;33m\]\w\[\033[0;0m\] \n\[\033[0;37m\]$(date +%H:%M:%S)\[\033[0;0m\] $ "

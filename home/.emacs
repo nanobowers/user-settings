@@ -1,3 +1,21 @@
+;; remove tabs
+(setq-default indent-tabs-mode nil)
+
+;; Settings for editing Environment Modules (modulecmd.tcl)
+(add-hook 'tcl-mode-hook
+      (lambda ()
+        (setq indent-tabs-mode nil)
+        (setq tcl-indent-level 3)
+        (setq tcl-continued-indent-level 3)
+        (font-lock-add-keywords nil '(("^[^\n]\\{79\\}\\(.*\\)$" 1
+                                       font-lock-warning-face prepend)))))
+
+;; textile support if it exists
+(cond
+ ( (file-directory-p "~/.emacs.d/textile-mode") ;; check this exists
+   (add-to-list 'load-path "~/.emacs.d/textile-mode")
+   (require 'textile-mode)
+   ))
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -66,3 +84,8 @@
              (set-window-start w2 s1)
              (setq i (1+ i)))))))
 
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
