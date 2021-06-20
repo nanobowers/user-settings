@@ -1,10 +1,7 @@
 
-
-# from fedora24 starting point:
+# install some things: emacs, tkdiff, etc.
 ```
-sudo dnf install emacs # emacs
-sudo dnf install tkcvs # tkdiff
-sudo dnf install gitk
+sudo ./get_stuff.sh
 ``` 
 
 # pull magic git-bash prompt
@@ -22,5 +19,5 @@ rvm install 2.7
 # now get my user settings
 ```
  git clone http://github.com/nanobowers/user-settings
- cd user-settings/home && ./install_dotfiles.sh
+ cd user-settings && ./install_dotfiles.sh
 ```
