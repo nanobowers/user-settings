@@ -14,9 +14,9 @@ cd ~ && git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-pr
 # Install RVM
 ```
 command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-curl -sSL https://get.rvm.io | bash -s stable
+\curl -sSL https://get.rvm.io | bash -s stable
 source ./.rvm/scripts/rvm
-rvm install 2.1.5 # or rvm reinstall 2.1.5
+rvm install 2.7
 ```
 
 # now get my user settings
