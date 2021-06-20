@@ -22,5 +22,5 @@ rvm install 2.1.5 # or rvm reinstall 2.1.5
 # now get my user settings
 ```
  git clone http://github.com/nanobowers/user-settings
- cd user-settings && ./install_dotfiles.sh
+ cd user-settings/home && ./install_dotfiles.sh
 ```
