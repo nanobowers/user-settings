@@ -1,5 +1,0 @@
-alias ls="ls --color"
-alias la="ls -la"
-alias lt="ls -lrt --color"
-alias e="emacs"
-alias h="history | tail -n 100"
