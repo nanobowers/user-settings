@@ -7,7 +7,6 @@ copy_dotfiles: ## Copy dotfiles to ~/
 	cp -f ./home/bash.d/* ~/.bash.d/
 	cp -f ./home/inputrc ~/.inputrc
 
-
 git_aliases: ## Install git aliases with git config
 	git config --global alias.co 'checkout'
 	git config --global alias.aa 'add -A'
@@ -23,6 +22,12 @@ download_bash_prompt: ## Download bash prompt
 # See <https://gist.github.com/klmr/575726c7e05d8780505a> for explanation.
 .DEFAULT_GOAL := help
 
+loader_token=bash-d-loader
+add_bashd_loader: ## edit the ~/.bashrc file to include the bash-d-loader
+	@if ! grep -q '# $(loader_token)' ~/.bashrc ; then \
+		echo 'test -d ~/.bash.d && for i in ~/.bash.d/*.sh; do source "$$i"; done # $(loader_token)' >> ~/.bashrc ; \
+		echo "Added $(loader_token) to ~/.bashrc" ; \
+	fi
 
 help: ## This help message
 	@perl -ne 'if (m/^([^\s]*):.*##(.*)$$/) { printf "make \033[36m%-30s\033[0m # %s\n", $$1, $$2}' $(MAKEFILE_LIST)
