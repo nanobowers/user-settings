@@ -1,5 +1,6 @@
 # makefile for pulling in user settings
 
+.DEFAULT_GOAL := help
 
 copy_dotfiles: ## Copy dotfiles to ~/
 	cp -f ./home/bash_aliases ~/.bash_aliases
@@ -19,8 +20,6 @@ git_aliases: ## Install git aliases with git config
 download_bash_prompt: ## Download bash prompt
 	cd ~ && git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt --depth=1
 
-# See <https://gist.github.com/klmr/575726c7e05d8780505a> for explanation.
-.DEFAULT_GOAL := help
 
 loader_token=bash-d-loader
 add_bashd_loader: ## edit the ~/.bashrc file to include the bash-d-loader
@@ -29,6 +28,7 @@ add_bashd_loader: ## edit the ~/.bashrc file to include the bash-d-loader
 		echo "Added $(loader_token) to ~/.bashrc" ; \
 	fi
 
+# See <https://gist.github.com/klmr/575726c7e05d8780505a> for explanation.
 help: ## This help message
 	@perl -ne 'if (m/^([^\s]*):.*##(.*)$$/) { printf "make \033[36m%-30s\033[0m # %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 

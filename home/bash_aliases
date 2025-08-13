@@ -1,5 +1,12 @@
-alias ls="ls --color"
-alias la="ls -la"
-alias lt="ls -lrt"
+if command -v lsd > /dev/null ; then
+    ls=lsd
+else
+    ls=ls
+fi
+
+alias ls="$ls"
+alias la="$ls -A"
+alias ll="$ls -l"
+alias lt="$ls -lrt"
 alias e="emacs"
 alias h="history 20"
