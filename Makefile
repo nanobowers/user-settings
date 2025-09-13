@@ -7,6 +7,7 @@ copy_dotfiles: ## Copy dotfiles to ~/
 	mkdir -p ~/.bash.d
 	cp -f ./home/bash.d/* ~/.bash.d/
 	cp -f ./home/inputrc ~/.inputrc
+	cp -f ./home/nanorc ~/.nanorc
 
 git_aliases: ## Install git aliases with git config
 	git config --global alias.co 'checkout'

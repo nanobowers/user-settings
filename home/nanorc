@@ -1,0 +1,54 @@
+# Emacs-like keybindings for nano
+# Note: nano does not support multi-key sequences (e.g., Ctrl+X Ctrl+C), so only single-key bindings are possible.
+# Some Emacs features are not available in nano.
+
+# Cursor movement
+bind ^A home main              # Move to beginning of line (Emacs: Ctrl+A)
+bind ^E end main               # Move to end of line (Emacs: Ctrl+E)
+bind ^N down main              # Next line (Emacs: Ctrl+N)
+bind ^P up main                # Previous line (Emacs: Ctrl+P)
+bind ^F right main             # Forward character (Emacs: Ctrl+F)
+bind ^B left main              # Backward character (Emacs: Ctrl+B)
+bind M-< firstline main        # Move to first line (Emacs: Alt+<)
+bind M-> lastline main         # Move to last line (Emacs: Alt+>)
+
+# Word movement
+bind M-F nextword main         # Forward word (Emacs: Alt+F, Ctrl+Right Arrow)
+bind M-B prevword main         # Backward word (Emacs: Alt+B, Ctrl+Left Arrow)
+
+# Editing
+bind ^D delete main            # Delete character (Emacs: Ctrl+D)
+set cutfromcursor              # Kill to end of line (Emacs: Ctrl+K)
+# If this does not work as expected, your nano may not support 'cutfromcursor'.
+# In that case, you can only use 'cut' (cuts the whole line) or mark a region and cut.
+bind ^Y paste main             # Yank (paste) (Emacs: Ctrl+Y)
+bind ^T execute all            # Transpose characters (Emacs: Ctrl+T)
+bind ^J enter main             # Insert new line (Emacs: Ctrl+J)
+
+# Redraw/Refresh
+bind ^L refresh main           # Redraw screen (Emacs: Ctrl+L)
+
+# Search
+bind ^S whereis main           # Search forward (Emacs: Ctrl+S)
+bind ^R wherewas main          # Search backward (Emacs: Ctrl+R)
+
+# Undo/Redo
+bind ^_ undo main              # Undo (Emacs: Ctrl+_, usually Ctrl+Shift+-)
+# Note: nano does not support redo by default.
+
+# File operations
+bind ^X exit main              # Exit (Emacs: Ctrl+X Ctrl+C, but only single key possible)
+bind ^O writeout main          # Save (Emacs: Ctrl+X Ctrl+S, but only single key possible)
+bind ^G help main              # Help (Emacs: Ctrl+H)
+
+# Marking and cutting
+bind ^@ mark main              # Set mark (Emacs: Ctrl+Space)
+bind ^W cut main               # Cut region (Emacs: Ctrl+W)
+bind M-W copy main             # Copy region (Emacs: Alt+W)
+
+# Limitations:
+# - No support for multi-key sequences (e.g., Ctrl+X Ctrl+C).
+# - No rectangle editing, macros, or advanced mark commands.
+# - Some Emacs keys may conflict with terminal or OS shortcuts.
+# - Redo is not available by default in nano.
+
